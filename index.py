@@ -12,10 +12,16 @@ def oxapay_callback():
     # OxaPay data yahan aayega
     data = request.form.to_dict() or request.json
     
+        # OxaPay se aane wala data safely nikal rahe hain
     status = data.get('status')
-    # Ye wahi ID hai jo humne payment generate karte waqt 'description' mein bheji thi
     user_id = data.get('description') 
     amount = data.get('amount')
+    currency = data.get('currency')
+
+    # Agar OxaPay se pura data nahi aaya toh yahi stop kar do
+    if status is None or amount is None or currency is None:
+        return "Invalid Data", 400
+        
     currency = data.get('currency')
 
     if status == 'paid' and user_id:
