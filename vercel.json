@@ -3,6 +3,6 @@
     { "source": "/(.*)", "destination": "/callback.py" }
   ],
   "functions": {
-    "callback.py": { "runtime": "vercel-python@0.10" }
+    "callback.py": { "runtime": "vercel-python@3.12" }
   }
 }
