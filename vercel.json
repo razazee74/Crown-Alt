@@ -1,8 +1,13 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/callback.py" }
+    {
+      "source": "/(.*)",
+      "destination": "/callback.py"
+    }
   ],
   "functions": {
-    "callback.py": { "runtime": "vercel-python@3.12" }
+    "callback.py": {
+      "runtime": "vercel-python@3.10"
+    }
   }
 }
